@@ -1,0 +1,40 @@
+{
+  "name": "react-lazy",
+  "version": "1.0.0",
+  "description": "React 18 图片懒加载组件和原生 JavaScript 懒加载实现",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./native": {
+      "import": "./dist/native-lazy.es.js",
+      "require": "./dist/native-lazy.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "lazyload",
+    "image",
+    "react18",
+    "native"
+  ],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
