@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const LazyImage = ({ src, alt, placeholder, ...props }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const imgRef = useRef(null);
 
   useEffect(() => {
@@ -34,6 +35,11 @@ const LazyImage = ({ src, alt, placeholder, ...props }) => {
     setIsLoaded(true);
   };
 
+  const handleError = () => {
+    setHasError(true);
+    setIsLoaded(true);
+  };
+
   return (
     <div ref={imgRef} {...props}>
       {!isLoaded && placeholder && (
@@ -46,6 +52,7 @@ const LazyImage = ({ src, alt, placeholder, ...props }) => {
           src={src}
           alt={alt}
           onLoad={handleLoad}
+          onError={handleError}
           style={{
             position: 'absolute',
             top: 0,
@@ -57,6 +64,11 @@ const LazyImage = ({ src, alt, placeholder, ...props }) => {
             transition: 'opacity 0.3s ease-in-out'
           }}
         />
+      )}
+      {hasError && !placeholder && (
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
+          图片加载失败
+        </div>
       )}
     </div>
   );

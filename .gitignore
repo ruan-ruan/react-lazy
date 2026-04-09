@@ -18,3 +18,7 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+dist
+package-lock.json
+.npmrc

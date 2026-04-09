@@ -1,7 +1,7 @@
 {
-  "name": "react-lazy",
+  "name": "@ruan-feiyang/react-lazy",
   "version": "1.0.0",
-  "description": "React 18 图片懒加载组件和原生 JavaScript 懒加载实现",
+  "description": "React 18 图片懒加载组件和原生 JavaScript 懒加载实现，基于 Intersection Observer API，性能优异，支持自定义占位符和平滑过渡效果",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -18,17 +18,28 @@
   },
   "scripts": {
     "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
   },
   "keywords": [
     "react",
     "lazyload",
     "image",
     "react18",
-    "native"
+    "native",
+    "intersection-observer",
+    "performance"
   ],
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/react-lazy.git"
+  },
+  "homepage": "https://github.com/yourusername/react-lazy#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/react-lazy/issues"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
